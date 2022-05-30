@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import Portal from '../src/lib/Portal.svelte';
+	import Portal from '$lib/portal.svelte';
 
 	export let modalVisible = true;
 	export let containerVisible = true;
