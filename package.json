@@ -1,6 +1,6 @@
 {
 	"name": "@oklookat/svelte-portal",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "Svelte component for rendering outside the parent component",
 	"repository": {
 		"type": "git",
