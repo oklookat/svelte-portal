@@ -1,24 +1,25 @@
-Svelte component for rendering outside the DOM of parent component
+# Svelte component for rendering outside the parent component
 
-Idea borrowed from here: https://github.com/sveltejs/svelte/issues/3088#issuecomment-505785516
+Fork of: https://github.com/romkor/svelte-portal
+
+Changes:
+- Based on SvelteKit
+- Typescript support
+- Little code refactoring
+- https://github.com/romkor/svelte-portal/issues/129
 
 # Installation
 
 ```sh
-npm install --save svelte-portal
+npm i @oklookat/svelte-portal
 ```
 
-or
 
-```sh
-yarn add svelte-portal
-```
+# Usage
 
-# Usage Portal component
+`<Portal />` component has only one property: `target`.
 
-The `<Portal />` component has only one property: `target`
-
-target can be a HTMLElement `target={document.body}` or a css selector `target="#modals"` that points to an already existing element.
+Target can be a HTMLElement or a CSS selector that points to an already existing element.
 
 When no target is given it defaults to: `document.body`.
 
@@ -26,30 +27,21 @@ When no target is given it defaults to: `document.body`.
 
 ```html
 <script>
-  import Portal from "svelte-portal";
+  import Portal from "@oklookat/svelte-portal";
+  import { portal } from "@oklookat/svelte-portal";
 </script>
 
-<Portal target="body">
-  <div class="toast">Entity successfully updated!</div>
-</Portal>
-```
+<main>
+  <Portal target="body">
+    div in body (component)
+  </Portal>
 
-# Usage portal action
+  <div use:portal={".overlay"} hidden>
+    div in .overlay (use)
+  </div>
+</main>
 
-The functionality can also be applied to DOM elements directly via a svelte action:
-
-## Example
-
-```html
-<script>
-  import { portal } from "svelte-portal";
-</script>
-
-<div class="toast" use:portal={"body"} hidden>Entity successfully updated!</div>
+<div class="overlay" />
 ```
 
 The `hidden` atrribute is only needed when using ssr, when portal has moved the element to it's targetted location it removes the hidden attribute.
-
-## TypeScript support
-
-`<script lang="ts">` users should import from `"svelte-portal/src/Portal.svelte"` instead of `"svelte-portal"` to get typing support.
