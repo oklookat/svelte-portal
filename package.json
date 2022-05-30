@@ -39,7 +39,8 @@
 	"types": "./portal.svelte.d.ts",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"package": "svelte-kit package",
+		"sync": "svelte-kit sync",
+		"package": "npm run sync && svelte-kit package",
 		"publish": "npm run package && cd ./dist && npm publish",
 		"packlocal": "npm run package && cd ./dist && npm pack",
 		"test": "jest",
