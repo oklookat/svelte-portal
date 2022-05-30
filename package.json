@@ -43,7 +43,7 @@
 		"package": "npm run sync && svelte-kit package",
 		"publish": "npm run package && cd ./dist && npm publish",
 		"packlocal": "npm run package && cd ./dist && npm pack",
-		"test": "jest",
+		"test": "npm run sync && jest",
 		"test:watch": "npm run test -- --watchAll",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
