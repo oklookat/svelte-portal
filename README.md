@@ -36,12 +36,10 @@ When no target is given it defaults to: `document.body`.
     div in body (component)
   </Portal>
 
-  <div use:portal={".overlay"} hidden>
+  <div use:portal={".overlay"}>
     div in .overlay (use)
   </div>
 </main>
 
 <div class="overlay" />
 ```
-
-The `hidden` atrribute is only needed when using ssr, when portal has moved the element to it's targetted location it removes the hidden attribute.

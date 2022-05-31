@@ -6,12 +6,12 @@
 
 	/**
 	 * **Usage:**
-	 * 
+	 *
 	 * CSS selector:
 	 * ```js
 	 * <div use:portal={'.css-selector'}>
 	 * ```
-	 * 
+	 *
 	 * HTMLElement:
 	 * ```js
 	 * <div use:portal={document.body}>
@@ -41,7 +41,6 @@
 				);
 			}
 			targetEl.appendChild(el);
-			el.hidden = false;
 		}
 
 		function destroy() {
@@ -60,6 +59,6 @@
 	export let target: Target = 'body';
 </script>
 
-<div use:portal={target} hidden {...$$restProps}>
+<div use:portal={target} {...$$restProps}>
 	<slot />
 </div>
